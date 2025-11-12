@@ -38,7 +38,7 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s ease-out;
+            transition: opacity 1s ease-out; /* Changed from 0.5s to 1s */
         }
 
         #preloader.hidden {
@@ -227,19 +227,19 @@
 
         /* Classes for JavaScript-triggered animations */
         .animated-element.is-visible[data-animation="fadeIn"] {
-            animation: fadeIn 0.8s ease-out forwards;
+            animation: fadeIn 1.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
         }
         .animated-element.is-visible[data-animation="fadeInUp"] {
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 1.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
         }
         .animated-element.is-visible[data-animation="slideInLeft"] {
-            animation: slideInLeft 0.8s ease-out forwards;
+            animation: slideInLeft 1.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
         }
         .animated-element.is-visible[data-animation="slideInRight"] {
-            animation: slideInRight 0.8s ease-out forwards;
+            animation: slideInRight 1.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
         }
         .animated-element.is-visible[data-animation="scaleIn"] {
-            animation: scaleIn 0.8s ease-out forwards;
+            animation: scaleIn 1.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
         }
     </style>
 </head>
@@ -252,7 +252,7 @@
     <header>
         <div class="container">
             <h1 class="animated-element" data-animation="fadeInUp">WELCOME TO IPROGRAM</h1>
-            <p class="animated-element" data-animation="fadeInUp" style="animation-delay: 0.3s;">Building Intelligent Mobile Experiences</p>
+            <p class="animated-element" data-animation="fadeInUp" style="animation-delay: 0.5s;">Building Intelligent Mobile Experiences</p> <!-- Changed from 0.3s to 0.5s -->
         </div>
     </header>
 
