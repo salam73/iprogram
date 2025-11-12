@@ -130,6 +130,15 @@
             animation: scaleIn 0.8s ease-out forwards; /* Apply animation to images */
         }
 
+        .card .avatar {
+            width: 100px; /* Set a fixed width for avatars */
+            height: 100px; /* Set a fixed height for avatars */
+            border-radius: 50%; /* Make avatars circular */
+            object-fit: cover; /* Ensure image covers the area without distortion */
+            margin: 0 auto 1rem auto; /* Center the avatar and add bottom margin */
+            border: 3px solid var(--accent-color); /* Add a border for emphasis */
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -218,14 +227,17 @@
             <h2 class="section-title animate-on-scroll">OUR TEAM</h2>
             <div class="grid-container">
                 <div class="card animate-on-scroll">
+                    <img src="https://picsum.photos/seed/alex/200" alt="Alex Doe Avatar" class="avatar">
                     <h3>ALEX DOE</h3>
                     <p class="skills"><strong>Skills:</strong> Lead iOS Developer, Swift, AI Integration</p>
                 </div>
                 <div class="card animate-on-scroll">
+                    <img src="https://picsum.photos/seed/jane/200" alt="Jane Smith Avatar" class="avatar">
                     <h3>JANE SMITH</h3>
                     <p class="skills"><strong>Skills:</strong> Senior Android Developer, Kotlin, Machine Learning</p>
                 </div>
                 <div class="card animate-on-scroll">
+                    <img src="https://picsum.photos/seed/sam/200" alt="Sam Wilson Avatar" class="avatar">
                     <h3>SAM WILSON</h3>
                     <p class="skills"><strong>Skills:</strong> UI/UX Designer, Flutter, Generative AI Interfaces</p>
                 </div>
