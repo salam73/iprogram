@@ -23,6 +23,41 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll during animations */
+        }
+
+        /* Preloader styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--accent-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .container {
@@ -42,7 +77,6 @@
             margin-bottom: 0.5rem;
             letter-spacing: 1.5px;
             opacity: 0; /* Initial state for animation */
-            animation: fadeInUp 1s ease-out forwards;
         }
 
         header p {
@@ -50,7 +84,6 @@
             font-weight: 300;
             color: var(--secondary-text-color);
             opacity: 0; /* Initial state for animation */
-            animation: fadeInUp 1s ease-out 0.3s forwards; /* Delayed animation */
         }
 
         .section {
@@ -64,6 +97,7 @@
             font-weight: 600;
             margin-bottom: 3rem;
             position: relative;
+            opacity: 0; /* Initial state for animation */
         }
 
         .section-title::after {
@@ -89,17 +123,12 @@
             padding: 2rem;
             box-shadow: 0 10px 25px var(--shadow-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0; /* Initial state for scroll animation */
-            transform: translateY(20px); /* Initial state for scroll animation */
+            opacity: 0; /* Initial state for animation */
         }
 
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px var(--shadow-color);
-        }
-
-        .card.is-visible {
-            animation: fadeInUp 0.6s ease-out forwards;
         }
 
         .card h3 {
@@ -127,7 +156,6 @@
             margin-bottom: 1rem;
             display: block;
             opacity: 0; /* Initial state for animation */
-            animation: scaleIn 0.8s ease-out forwards; /* Apply animation to images */
         }
 
         .card .avatar {
@@ -148,6 +176,11 @@
         }
 
         /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -156,6 +189,28 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
 
@@ -170,53 +225,63 @@
             }
         }
 
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        /* Classes for JavaScript-triggered animations */
+        .animated-element.is-visible[data-animation="fadeIn"] {
+            animation: fadeIn 0.8s ease-out forwards;
         }
-
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+        .animated-element.is-visible[data-animation="fadeInUp"] {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .animated-element.is-visible[data-animation="slideInLeft"] {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        .animated-element.is-visible[data-animation="slideInRight"] {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+        .animated-element.is-visible[data-animation="scaleIn"] {
+            animation: scaleIn 0.8s ease-out forwards;
         }
     </style>
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
 
     <header>
         <div class="container">
-            <h1>WELCOME TO IPROGRAM</h1>
-            <p>Building Intelligent Mobile Experiences</p>
+            <h1 class="animated-element" data-animation="fadeInUp">WELCOME TO IPROGRAM</h1>
+            <p class="animated-element" data-animation="fadeInUp" style="animation-delay: 0.3s;">Building Intelligent Mobile Experiences</p>
         </div>
     </header>
 
     <main class="container">
         <section class="section" id="work">
-            <h2 class="section-title animate-on-scroll">OUR WORK</h2>
+            <h2 class="section-title animated-element" data-animation="fadeIn">OUR WORK</h2>
             <div class="grid-container">
-                <div class="card animate-on-scroll">
-                    <img src="./assets/real-estate.png" alt="Real Estate App">
+                <div class="card animated-element" data-animation="slideInLeft">
+                    <img src="./assets/real-estate.png" alt="Real Estate App" class="animated-element" data-animation="scaleIn">
                     <h3>REAL ESTATE SOLUTIONS</h3>
                     <p>Revolutionizing property management and client engagement with AI-powered solutions.</p>
                 </div>
-                <div class="card animate-on-scroll">
-                    <img src="./assets/education.png" alt="Education App">
+                <div class="card animated-element" data-animation="slideInRight">
+                    <img src="./assets/education.png" alt="Education App" class="animated-element" data-animation="scaleIn">
                     <h3>EDUCATION PLATFORMS</h3>
                     <p>Enhancing learning experiences through personalized educational apps and intelligent tutoring systems.</p>
                 </div>
-                <div class="card animate-on-scroll">
-                    <img src="./assets/fitness.png" alt="Fitness App">
+                <div class="card animated-element" data-animation="slideInLeft">
+                    <img src="./assets/fitness.png" alt="Fitness App" class="animated-element" data-animation="scaleIn">
                     <h3>FITNESS & WELLNESS</h3>
                     <p>Developing smart fitness trackers and personalized workout plans driven by machine learning.</p>
                 </div>
-                <div class="card animate-on-scroll">
-                    <img src="./assets/healthcare.png" alt="Healthcare App">
+                <div class="card animated-element" data-animation="slideInRight">
+                    <img src="./assets/healthcare.png" alt="Healthcare App" class="animated-element" data-animation="scaleIn">
                     <h3>HEALTHCARE INNOVATIONS</h3>
                     <p>Innovating healthcare with AI diagnostics, patient management, and telehealth platforms.</p>
                 </div>
-                <div class="card animate-on-scroll">
-                    <img src="./assets/workplace.png" alt="Workplace Solutions">
+                <div class="card animated-element" data-animation="slideInLeft">
+                    <img src="./assets/workplace.png" alt="Workplace Solutions" class="animated-element" data-animation="scaleIn">
                     <h3>WORKPLACE OPTIMIZATION</h3>
                     <p>Optimizing business operations and employee productivity with intelligent workplace solutions.</p>
                 </div>
@@ -224,20 +289,20 @@
         </section>
 
         <section class="section" id="team">
-            <h2 class="section-title animate-on-scroll">OUR TEAM</h2>
+            <h2 class="section-title animated-element" data-animation="fadeIn">OUR TEAM</h2>
             <div class="grid-container">
-                <div class="card animate-on-scroll">
-                    <img src="https://picsum.photos/seed/alex/200" alt="Alex Doe Avatar" class="avatar">
+                <div class="card animated-element" data-animation="fadeInUp">
+                    <img src="https://picsum.photos/seed/alex/200" alt="Alex Doe Avatar" class="avatar animated-element" data-animation="scaleIn">
                     <h3>ALEX DOE</h3>
                     <p class="skills"><strong>Skills:</strong> Lead iOS Developer, Swift, AI Integration</p>
                 </div>
-                <div class="card animate-on-scroll">
-                    <img src="https://picsum.photos/seed/jane/200" alt="Jane Smith Avatar" class="avatar">
+                <div class="card animated-element" data-animation="fadeInUp">
+                    <img src="https://picsum.photos/seed/jane/200" alt="Jane Smith Avatar" class="avatar animated-element" data-animation="scaleIn">
                     <h3>JANE SMITH</h3>
                     <p class="skills"><strong>Skills:</strong> Senior Android Developer, Kotlin, Machine Learning</p>
                 </div>
-                <div class="card animate-on-scroll">
-                    <img src="https://picsum.photos/seed/sam/200" alt="Sam Wilson Avatar" class="avatar">
+                <div class="card animated-element" data-animation="fadeInUp">
+                    <img src="https://picsum.photos/seed/sam/200" alt="Sam Wilson Avatar" class="avatar animated-element" data-animation="scaleIn">
                     <h3>SAM WILSON</h3>
                     <p class="skills"><strong>Skills:</strong> UI/UX Designer, Flutter, Generative AI Interfaces</p>
                 </div>
@@ -251,23 +316,47 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Preloader logic
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                window.addEventListener('load', () => {
+                    preloader.classList.add('hidden');
+                });
+            }
+
+            // Intersection Observer for scroll animations
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1
+                threshold: 0.1 // Trigger when 10% of the element is visible
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
+                        const element = entry.target;
+                        const animationType = element.dataset.animation;
+                        if (animationType) {
+                            element.classList.add(`animate-${animationType}`);
+                            element.classList.add('is-visible');
+                        }
+                        observer.unobserve(element); // Stop observing once animated
                     }
                 });
             }, observerOptions);
 
-            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            // Observe elements with the 'animated-element' class
+            document.querySelectorAll('.animated-element').forEach(element => {
                 observer.observe(element);
+            });
+
+            // Trigger header animations immediately on DOMContentLoaded
+            document.querySelectorAll('header h1, header p').forEach(element => {
+                const animationType = element.dataset.animation;
+                if (animationType) {
+                    element.classList.add(`animate-${animationType}`);
+                    element.classList.add('is-visible');
+                }
             });
         });
     </script>
