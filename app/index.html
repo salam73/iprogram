@@ -227,19 +227,19 @@
 
         /* Classes for JavaScript-triggered animations */
         .animated-element.is-visible[data-animation="fadeIn"] {
-            animation: fadeIn 1.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
+            animation: fadeIn 2.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
         }
         .animated-element.is-visible[data-animation="fadeInUp"] {
-            animation: fadeInUp 1.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
+            animation: fadeInUp 2.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
         }
         .animated-element.is-visible[data-animation="slideInLeft"] {
-            animation: slideInLeft 1.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
+            animation: slideInLeft 2.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
         }
         .animated-element.is-visible[data-animation="slideInRight"] {
-            animation: slideInRight 1.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
+            animation: slideInRight 2.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
         }
         .animated-element.is-visible[data-animation="scaleIn"] {
-            animation: scaleIn 1.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
+            animation: scaleIn 2.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
         }
     </style>
 </head>
@@ -257,7 +257,7 @@
     </header>
 
     <main class="container">
-        <section class="section" id="work">
+        <section class="section animated-element" id="work" data-animation="slideInLeft">
             <h2 class="section-title animated-element" data-animation="fadeIn">OUR WORK</h2>
             <div class="grid-container">
                 <div class="card animated-element" data-animation="slideInLeft">
@@ -288,7 +288,7 @@
             </div>
         </section>
 
-        <section class="section" id="team">
+        <section class="section animated-element" id="team" data-animation="slideInRight">
             <h2 class="section-title animated-element" data-animation="fadeIn">OUR TEAM</h2>
             <div class="grid-container">
                 <div class="card animated-element" data-animation="fadeInUp">
