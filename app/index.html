@@ -3,90 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iProgram - AI & Mobile Solutions</title>
-    <link type="text/css" rel="stylesheet" href="./css/index.css">
+    <title>iProgram - Intelligent Mobile Experiences</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --bg-color: #121212;
+            --primary-text-color: #E0E0E0;
+            --secondary-text-color: #BDBDBD;
+            --card-bg-color: #1E1E1E;
+            --accent-color: #03DAC6;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1.5px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--secondary-text-color);
+        }
+
+        .section {
+            padding: 2rem 0;
+            border-top: 1px solid var(--card-bg-color);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow-color);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--secondary-text-color);
+            margin-bottom: 0;
+        }
+        
+        .card .skills {
+            color: var(--primary-text-color);
+            font-weight: 400;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: var(--secondary-text-color);
+            border-top: 1px solid var(--card-bg-color);
+        }
+
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1 class="company-name">Welcome to iProgram</h1>
-            <p class="tagline">Building Intelligent Mobile Experiences</p>
-            <div class="services-list">
-                <h3>Our Expertise:</h3>
-                <ul>
-                    <li>Real Estate</li>
-                    <li>Education</li>
-                    <li>Fitness</li>
-                    <li>Healthcare</li>
-                </ul>
+    <header>
+        <div class="container">
+            <h1>WELCOME TO IPROGRAM</h1>
+            <p>Building Intelligent Mobile Experiences</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section" id="work">
+            <h2 class="section-title">OUR WORK</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>INTELLIGENT PHOTO ORGANIZER</h3>
+                    <p>An app that automatically categorizes your photos using AI.</p>
+                </div>
+                <div class="card">
+                    <h3>SMART FITNESS COACH</h3>
+                    <p>Personalized workout and nutrition plans powered by machine learning.</p>
+                </div>
+                <div class="card">
+                    <h3>LANGUAGE LEARNING BUDDY</h3>
+                    <p>Practice conversations with an AI-powered language tutor.</p>
+                </div>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <section id="app-examples">
-                <h2 class="section-title">Our Work</h2>
-                <div class="app-grid">
-                    <div class="app-card">
-                        <img src="./assets/real-estate.png" alt="Real Estate App">
-                        <div class="app-info">
-                            <h3>Real Estate Solutions</h3>
-                            <p>Revolutionizing property management and client engagement with AI-powered solutions.</p>
-                        </div>
-                    </div>
-                    <div class="app-card">
-                        <img src="./assets/education.png" alt="Education App">
-                        <div class="app-info">
-                            <h3>Education Platforms</h3>
-                            <p>Enhancing learning experiences through personalized educational apps and intelligent tutoring systems.</p>
-                        </div>
-                    </div>
-                    <div class="app-card">
-                        <img src="./assets/fitness.png" alt="Fitness App">
-                        <div class="app-info">
-                            <h3>Fitness & Wellness</h3>
-                            <p>Developing smart fitness trackers and personalized workout plans driven by machine learning.</p>
-                        </div>
-                    </div>
-                    <div class="app-card">
-                        <img src="./assets/healthcare.png" alt="Healthcare App">
-                        <div class="app-info">
-                            <h3>Healthcare Innovations</h3>
-                            <p>Innovating healthcare with AI diagnostics, patient management, and telehealth platforms.</p>
-                        </div>
-                    </div>
-                    <div class="app-card">
-                        <img src="./assets/workplace.png" alt="Workplace Solutions">
-                        <div class="app-info">
-                            <h3>Workplace Optimization</h3>
-                            <p>Optimizing business operations and employee productivity with intelligent workplace solutions.</p>
-                        </div>
-                    </div>
+        <section class="section" id="team">
+            <h2 class="section-title">OUR TEAM</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>ALEX DOE</h3>
+                    <p class="skills"><strong>Skills:</strong> Lead iOS Developer, Swift, AI Integration</p>
                 </div>
-            </section>
+                <div class="card">
+                    <h3>JANE SMITH</h3>
+                    <p class="skills"><strong>Skills:</strong> Senior Android Developer, Kotlin, Machine Learning</p>
+                </div>
+                <div class="card">
+                    <h3>SAM WILSON</h3>
+                    <p class="skills"><strong>Skills:</strong> UI/UX Designer, Flutter, Generative AI Interfaces</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-            <section id="team">
-                <h2 class="section-title">Our Team</h2>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <img src="https://picsum.photos/seed/person1/200" alt="Alex Doe">
-                        <h3>Alex Doe</h3>
-                        <p><strong>Skills:</strong> Lead iOS Developer, Swift, AI Integration</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="https://picsum.photos/seed/person2/200" alt="Jane Smith">
-                        <h3>Jane Smith</h3>
-                        <p><strong>Skills:</strong> Senior Android Developer, Kotlin, Machine Learning</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="https://picsum.photos/seed/person3/200" alt="Sam Wilson">
-                        <h3>Sam Wilson</h3>
-                        <p><strong>Skills:</strong> UI/UX Designer, Flutter, Generative AI Interfaces</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+    <footer>
+        <p>&copy; 2024 iProgram. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
