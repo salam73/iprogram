@@ -1,0 +1,6 @@
+
+sudo chown -R $(whoami) ~/.pub-cache
+
+
+
+sudo chown -R $(whoami) /Users/salamal-kashmiri/StudioProjects/iprogram
