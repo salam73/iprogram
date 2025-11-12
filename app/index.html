@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iProgram - AI & Mobile Solutions</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .company-name {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .1em;
+            animation:
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+
+        #team {
+            padding: 4rem 0;
+        }
+
+        h2.section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            animation: slideIn 1s ease-out;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            padding: 2rem;
+            animation: fadeIn 2s ease-in-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid orange;
+            margin-bottom: 1.5rem;
+            animation: zoomIn 1.5s ease-out;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member img:hover {
+            transform: scale(1.1);
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #b0b0b0;
+            animation: slideIn 2s ease-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 class="company-name">Welcome to iProgram</h1>
+            <p class="tagline">Building Intelligent Mobile Experiences</p>
+        </header>
+
+        <main>
+            <section id="team">
+                <h2 class="section-title">Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://picsum.photos/seed/person1/200" alt="Alex Doe">
+                        <h3>Alex Doe</h3>
+                        <p><strong>Skills:</strong> Lead iOS Developer, Swift, AI Integration</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://picsum.photos/seed/person2/200" alt="Jane Smith">
+                        <h3>Jane Smith</h3>
+                        <p><strong>Skills:</strong> Senior Android Developer, Kotlin, Machine Learning</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://picsum.photos/seed/person3/200" alt="Sam Wilson">
+                        <h3>Sam Wilson</h3>
+                        <p><strong>Skills:</strong> UI/UX Designer, Flutter, Generative AI Interfaces</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

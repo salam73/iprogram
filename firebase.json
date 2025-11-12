@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "/app",
+    "site": "iprogram",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
