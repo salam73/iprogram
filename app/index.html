@@ -26,6 +26,12 @@
             overflow-x: hidden; /* Prevent horizontal scroll during animations */
         }
 
+        /* RTL support */
+        body.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+
         /* Preloader styles */
         #preloader {
             position: fixed;
@@ -38,7 +44,7 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 1s ease-out; /* Changed from 0.5s to 1s */
+            transition: opacity 1s ease-out;
         }
 
         #preloader.hidden {
@@ -69,6 +75,32 @@
         header {
             text-align: center;
             padding: 4rem 0;
+            position: relative; /* For language switcher positioning */
+        }
+
+        #language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        #language-switcher span {
+            cursor: pointer;
+            color: var(--secondary-text-color);
+            font-weight: 600;
+            padding: 5px 10px;
+            border: 1px solid var(--secondary-text-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        #language-switcher span.active,
+        #language-switcher span:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
         }
 
         header h1 {
@@ -227,19 +259,19 @@
 
         /* Classes for JavaScript-triggered animations */
         .animated-element.is-visible[data-animation="fadeIn"] {
-            animation: fadeIn 2.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
+            animation: fadeIn 1.2s ease-out forwards;
         }
         .animated-element.is-visible[data-animation="fadeInUp"] {
-            animation: fadeInUp 2.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
+            animation: fadeInUp 1.2s ease-out forwards;
         }
         .animated-element.is-visible[data-animation="slideInLeft"] {
-            animation: slideInLeft 2.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
+            animation: slideInLeft 1.2s ease-out forwards;
         }
         .animated-element.is-visible[data-animation="slideInRight"] {
-            animation: slideInRight 2.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
+            animation: slideInRight 1.2s ease-out forwards;
         }
         .animated-element.is-visible[data-animation="scaleIn"] {
-            animation: scaleIn 2.2s ease-out forwards; /* Changed from 0.8s to 1.2s */
+            animation: scaleIn 1.2s ease-out forwards;
         }
     </style>
 </head>
@@ -251,70 +283,114 @@
 
     <header>
         <div class="container">
-            <h1 class="animated-element" data-animation="fadeInUp">WELCOME TO IPROGRAM</h1>
-            <p class="animated-element" data-animation="fadeInUp" style="animation-delay: 0.5s;">Building Intelligent Mobile Experiences</p> <!-- Changed from 0.3s to 0.5s -->
+            <div id="language-switcher">
+                <span id="lang-en" class="active">EN</span>
+                <span id="lang-ar">AR</span>
+            </div>
+            <h1 class="animated-element" data-animation="fadeInUp" data-i18n="header_welcome">WELCOME TO IPROGRAM</h1>
+            <p class="animated-element" data-animation="fadeInUp" style="animation-delay: 0.5s;" data-i18n="header_tagline">Building Intelligent Mobile Experiences</p>
         </div>
     </header>
 
     <main class="container">
         <section class="section animated-element" id="work" data-animation="slideInLeft">
-            <h2 class="section-title animated-element" data-animation="fadeIn">OUR WORK</h2>
+            <h2 class="section-title animated-element" data-animation="fadeIn" data-i18n="section_work_title">OUR WORK</h2>
             <div class="grid-container">
                 <div class="card animated-element" data-animation="slideInLeft">
                     <img src="./assets/real-estate.png" alt="Real Estate App" class="animated-element" data-animation="scaleIn">
-                    <h3>REAL ESTATE SOLUTIONS</h3>
-                    <p>Revolutionizing property management and client engagement with AI-powered solutions.</p>
+                    <h3 data-i18n="work_real_estate_title">REAL ESTATE SOLUTIONS</h3>
+                    <p data-i18n="work_real_estate_desc">Revolutionizing property management and client engagement with AI-powered solutions.</p>
                 </div>
                 <div class="card animated-element" data-animation="slideInRight">
                     <img src="./assets/education.png" alt="Education App" class="animated-element" data-animation="scaleIn">
-                    <h3>EDUCATION PLATFORMS</h3>
-                    <p>Enhancing learning experiences through personalized educational apps and intelligent tutoring systems.</p>
+                    <h3 data-i18n="work_education_title">EDUCATION PLATFORMS</h3>
+                    <p data-i18n="work_education_desc">Enhancing learning experiences through personalized educational apps and intelligent tutoring systems.</p>
                 </div>
                 <div class="card animated-element" data-animation="slideInLeft">
                     <img src="./assets/fitness.png" alt="Fitness App" class="animated-element" data-animation="scaleIn">
-                    <h3>FITNESS & WELLNESS</h3>
-                    <p>Developing smart fitness trackers and personalized workout plans driven by machine learning.</p>
+                    <h3 data-i18n="work_fitness_title">FITNESS & WELLNESS</h3>
+                    <p data-i18n="work_fitness_desc">Developing smart fitness trackers and personalized workout plans driven by machine learning.</p>
                 </div>
                 <div class="card animated-element" data-animation="slideInRight">
                     <img src="./assets/healthcare.png" alt="Healthcare App" class="animated-element" data-animation="scaleIn">
-                    <h3>HEALTHCARE INNOVATIONS</h3>
-                    <p>Innovating healthcare with AI diagnostics, patient management, and telehealth platforms.</p>
+                    <h3 data-i18n="work_healthcare_title">HEALTHCARE INNOVATIONS</h3>
+                    <p data-i18n="work_healthcare_desc">Innovating healthcare with AI diagnostics, patient management, and telehealth platforms.</p>
                 </div>
                 <div class="card animated-element" data-animation="slideInLeft">
                     <img src="./assets/workplace.png" alt="Workplace Solutions" class="animated-element" data-animation="scaleIn">
-                    <h3>WORKPLACE OPTIMIZATION</h3>
-                    <p>Optimizing business operations and employee productivity with intelligent workplace solutions.</p>
+                    <h3 data-i18n="work_workplace_title">WORKPLACE OPTIMIZATION</h3>
+                    <p data-i18n="work_workplace_desc">Optimizing business operations and employee productivity with intelligent workplace solutions.</p>
                 </div>
             </div>
         </section>
 
         <section class="section animated-element" id="team" data-animation="slideInRight">
-            <h2 class="section-title animated-element" data-animation="fadeIn">OUR TEAM</h2>
+            <h2 class="section-title animated-element" data-animation="fadeIn" data-i18n="section_team_title">OUR TEAM</h2>
             <div class="grid-container">
                 <div class="card animated-element" data-animation="fadeInUp">
                     <img src="https://picsum.photos/seed/alex/200" alt="Alex Doe Avatar" class="avatar animated-element" data-animation="scaleIn">
-                    <h3>ALEX DOE</h3>
-                    <p class="skills"><strong>Skills:</strong> Lead iOS Developer, Swift, AI Integration</p>
+                    <h3 data-i18n="team_alex_name">ALEX DOE</h3>
+                    <p class="skills" data-i18n="team_alex_skills"><strong>Skills:</strong> Lead iOS Developer, Swift, AI Integration</p>
                 </div>
                 <div class="card animated-element" data-animation="fadeInUp">
                     <img src="https://picsum.photos/seed/jane/200" alt="Jane Smith Avatar" class="avatar animated-element" data-animation="scaleIn">
-                    <h3>JANE SMITH</h3>
-                    <p class="skills"><strong>Skills:</strong> Senior Android Developer, Kotlin, Machine Learning</p>
+                    <h3 data-i18n="team_jane_name">JANE SMITH</h3>
+                    <p class="skills" data-i18n="team_jane_skills"><strong>Skills:</strong> Senior Android Developer, Kotlin, Machine Learning</p>
                 </div>
                 <div class="card animated-element" data-animation="fadeInUp">
                     <img src="https://picsum.photos/seed/sam/200" alt="Sam Wilson Avatar" class="avatar animated-element" data-animation="scaleIn">
-                    <h3>SAM WILSON</h3>
-                    <p class="skills"><strong>Skills:</strong> UI/UX Designer, Flutter, Generative AI Interfaces</p>
+                    <h3 data-i18n="team_sam_name">SAM WILSON</h3>
+                    <p class="skills" data-i18n="team_sam_skills"><strong>Skills:</strong> UI/UX Designer, Flutter, Generative AI Interfaces</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 iProgram. All Rights Reserved.</p>
+        <p data-i18n="footer_copyright">&copy; 2024 iProgram. All Rights Reserved.</p>
     </footer>
 
     <script>
+        const translations = {}; // Object to store loaded translations
+
+        async function loadTranslations(lang) {
+            try {
+                const response = await fetch(`./lang/${lang}.json`);
+                const data = await response.json();
+                translations[lang] = data; // Store translations
+
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (translations[lang][key]) {
+                        // Handle strong tag within skills paragraph
+                        if (element.classList.contains('skills')) {
+                            element.innerHTML = `<strong>${translations[lang][key].split(':')[0]}:</strong> ${translations[lang][key].split(':')[1]}`;
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    }
+                });
+
+                // Set HTML direction for RTL languages
+                document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+                document.body.classList.toggle('rtl', lang === 'ar');
+
+                // Update active language button
+                document.querySelectorAll('#language-switcher span').forEach(span => {
+                    span.classList.remove('active');
+                });
+                document.getElementById(`lang-${lang}`).classList.add('active');
+
+            } catch (error) {
+                console.error('Error loading translations:', error);
+            }
+        }
+
+        function switchLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            loadTranslations(lang);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             // Preloader logic
             const preloader = document.getElementById('preloader');
@@ -323,6 +399,14 @@
                     preloader.classList.add('hidden');
                 });
             }
+
+            // Language switcher event listeners
+            document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+            document.getElementById('lang-ar').addEventListener('click', () => switchLanguage('ar'));
+
+            // Load saved language or default to English
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+            loadTranslations(savedLanguage);
 
             // Intersection Observer for scroll animations
             const observerOptions = {

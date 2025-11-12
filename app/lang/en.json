@@ -1,0 +1,23 @@
+{
+    "header_welcome": "WELCOME TO IPROGRAM",
+    "header_tagline": "Building Intelligent Mobile Experiences",
+    "section_work_title": "OUR WORK",
+    "work_real_estate_title": "REAL ESTATE SOLUTIONS",
+    "work_real_estate_desc": "Revolutionizing property management and client engagement with AI-powered solutions.",
+    "work_education_title": "EDUCATION PLATFORMS",
+    "work_education_desc": "Enhancing learning experiences through personalized educational apps and intelligent tutoring systems.",
+    "work_fitness_title": "FITNESS & WELLNESS",
+    "work_fitness_desc": "Developing smart fitness trackers and personalized workout plans driven by machine learning.",
+    "work_healthcare_title": "HEALTHCARE INNOVATIONS",
+    "work_healthcare_desc": "Innovating healthcare with AI diagnostics, patient management, and telehealth platforms.",
+    "work_workplace_title": "WORKPLACE OPTIMIZATION",
+    "work_workplace_desc": "Optimizing business operations and employee productivity with intelligent workplace solutions.",
+    "section_team_title": "OUR TEAM",
+    "team_alex_name": "ALEX DOE",
+    "team_alex_skills": "Skills: Lead iOS Developer, Swift, AI Integration",
+    "team_jane_name": "JANE SMITH",
+    "team_jane_skills": "Skills: Senior Android Developer, Kotlin, Machine Learning",
+    "team_sam_name": "SAM WILSON",
+    "team_sam_skills": "Skills: UI/UX Designer, Flutter, Generative AI Interfaces",
+    "footer_copyright": "© 2024 iProgram. All Rights Reserved."
+}
