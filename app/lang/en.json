@@ -1,6 +1,7 @@
 {
     "header_welcome": "Welcome to iProgram",
     "header_tagline": "Building intelligent mobile experiences",
+    "intelligent_experiences_text": "An intelligent mobile experience uses AI/ML to become personalized and proactive. It leverages both on-device processing for speed and privacy, and cloud APIs for complex tasks. These apps predict user needs, adapt to context (time, location), and offer relevant assistance before being asked. This shift moves the mobile app from a static tool to a smart, learning assistant. The goal is to create intuitive applications that continuously improve user interaction.",
     "section_work_title": "Our work",
     "work_real_estate_title": "Real estate solutions",
     "work_real_estate_desc": "revolutionizing property management and client engagement with ai-powered solutions.",
