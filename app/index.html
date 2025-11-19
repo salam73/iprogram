@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,8 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scroll during animations */
+            overflow-x: hidden;
+            /* Prevent horizontal scroll during animations */
         }
 
         /* RTL support */
@@ -62,8 +64,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .container {
@@ -75,7 +82,8 @@
         header {
             text-align: center;
             /* padding: 4rem 0; */
-            position: relative; /* For language switcher positioning */
+            position: relative;
+            /* For language switcher positioning */
         }
 
         #language-switcher {
@@ -108,14 +116,16 @@
             font-weight: 700;
             margin-bottom: 0.5rem;
             letter-spacing: 1.5px;
-            opacity: 0; /* Initial state for animation */
+            opacity: 0;
+            /* Initial state for animation */
         }
 
         header p {
             font-size: 1.2rem;
             font-weight: 300;
             color: var(--secondary-text-color);
-            opacity: 0; /* Initial state for animation */
+            opacity: 0;
+            /* Initial state for animation */
         }
 
         .section {
@@ -129,7 +139,8 @@
             font-weight: 600;
             margin-bottom: 3rem;
             position: relative;
-            opacity: 0; /* Initial state for animation */
+            opacity: 0;
+            /* Initial state for animation */
         }
 
         .section-title::after {
@@ -155,7 +166,8 @@
             padding: 2rem;
             box-shadow: 0 10px 25px var(--shadow-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0; /* Initial state for animation */
+            opacity: 0;
+            /* Initial state for animation */
         }
 
         .card:hover {
@@ -175,7 +187,7 @@
             color: var(--secondary-text-color);
             margin-bottom: 0;
         }
-        
+
         .card .skills {
             color: var(--primary-text-color);
             font-weight: 400;
@@ -187,16 +199,23 @@
             border-radius: 8px;
             margin-bottom: 1rem;
             display: block;
-            opacity: 0; /* Initial state for animation */
+            opacity: 0;
+            /* Initial state for animation */
         }
 
         .card .avatar {
-            width: 100px; /* Set a fixed width for avatars */
-            height: 100px; /* Set a fixed height for avatars */
-            border-radius: 50%; /* Make avatars circular */
-            object-fit: cover; /* Ensure image covers the area without distortion */
-            margin: 0 auto 1rem auto; /* Center the avatar and add bottom margin */
-            border: 3px solid var(--accent-color); /* Add a border for emphasis */
+            width: 100px;
+            /* Set a fixed width for avatars */
+            height: 100px;
+            /* Set a fixed height for avatars */
+            border-radius: 50%;
+            /* Make avatars circular */
+            object-fit: cover;
+            /* Ensure image covers the area without distortion */
+            margin: 0 auto 1rem auto;
+            /* Center the avatar and add bottom margin */
+            border: 3px solid var(--accent-color);
+            /* Add a border for emphasis */
         }
 
         footer {
@@ -209,8 +228,13 @@
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes fadeInUp {
@@ -218,6 +242,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -229,6 +254,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -240,6 +266,7 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -251,6 +278,7 @@
                 opacity: 0;
                 transform: scale(0.9);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1);
@@ -261,23 +289,28 @@
         .animated-element.is-visible[data-animation="fadeIn"] {
             animation: fadeIn 1.2s ease-out forwards;
         }
+
         .animated-element.is-visible[data-animation="fadeInUp"] {
             animation: fadeInUp 1.2s ease-out forwards;
         }
+
         .animated-element.is-visible[data-animation="slideInLeft"] {
             animation: slideInLeft 1.2s ease-out forwards;
         }
+
         .animated-element.is-visible[data-animation="slideInRight"] {
             animation: slideInRight 1.2s ease-out forwards;
         }
+
         .animated-element.is-visible[data-animation="scaleIn"] {
             animation: scaleIn 1.2s ease-out forwards;
         }
 
         .text-focus-in {
-	        -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
         }
+
         /* ----------------------------------------------
         * Generated by Animista on 2024-5-14 19:45:45
         * Licensed under FreeBSD License.
@@ -288,29 +321,52 @@
         @-webkit-keyframes text-focus-in {
             0% {
                 -webkit-filter: blur(12px);
-                        filter: blur(12px);
+                filter: blur(12px);
                 opacity: 0;
             }
+
             100% {
                 -webkit-filter: blur(0px);
-                        filter: blur(0px);
+                filter: blur(0px);
                 opacity: 1;
             }
         }
+
         @keyframes text-focus-in {
             0% {
                 -webkit-filter: blur(12px);
-                        filter: blur(12px);
+                filter: blur(12px);
                 opacity: 0;
             }
+
             100% {
                 -webkit-filter: blur(0px);
-                        filter: blur(0px);
+                filter: blur(0px);
                 opacity: 1;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding-top: 80px;
+                /* Push content down to clear the language switcher */
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+                /* Reduce font size for smaller screens */
+            }
+
+            #language-switcher {
+                top: 20px;
+                right: 20px;
+                /* Ensure it stays in the corner */
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -324,62 +380,85 @@
                 <span id="lang-ar">AR</span>
             </div>
             <h1 class="animated-element" data-animation="fadeInUp" data-i18n="header_welcome">WELCOME TO IPROGRAM</h1>
-            <p class="animated-element" data-animation="fadeInUp" style="animation-delay: 0.5s;" data-i18n="header_tagline">Building Intelligent Mobile Experiences</p>
-            <p class="animated-element text-focus-in" data-animation="fadeInUp" style="animation-delay: 0.7s;" data-i18n="intelligent_experiences_text">
-                An intelligent mobile experience uses AI/ML to become personalized and proactive. It leverages both on-device processing for speed and privacy, and cloud APIs for complex tasks. These apps predict user needs, adapt to context (time, location), and offer relevant assistance before being asked. This shift moves the mobile app from a static tool to a smart, learning assistant. The goal is to create intuitive applications that continuously improve user interaction.
+            <p class="animated-element" data-animation="fadeInUp" style="animation-delay: 0.5s;"
+                data-i18n="header_tagline">Building Intelligent Mobile Experiences</p>
+            <p class="animated-element text-focus-in" data-animation="fadeInUp" style="animation-delay: 0.7s;"
+                data-i18n="intelligent_experiences_text">
+                An intelligent mobile experience uses AI/ML to become personalized and proactive. It leverages both
+                on-device processing for speed and privacy, and cloud APIs for complex tasks. These apps predict user
+                needs, adapt to context (time, location), and offer relevant assistance before being asked. This shift
+                moves the mobile app from a static tool to a smart, learning assistant. The goal is to create intuitive
+                applications that continuously improve user interaction.
             </p>
-       
+
     </header>
 
     <main class="container">
         <section class="section animated-element" id="work" data-animation="slideInLeft">
-            <h2 class="section-title animated-element" data-animation="fadeIn" data-i18n="section_work_title">OUR WORK</h2>
+            <h2 class="section-title animated-element" data-animation="fadeIn" data-i18n="section_work_title">OUR WORK
+            </h2>
             <div class="grid-container">
                 <div class="card animated-element" data-animation="slideInLeft">
-                    <img src="./assets/real-estate.png" alt="Real Estate App" class="animated-element" data-animation="scaleIn">
+                    <img src="./assets/real-estate.png" alt="Real Estate App" class="animated-element"
+                        data-animation="scaleIn">
                     <h3 data-i18n="work_real_estate_title">REAL ESTATE SOLUTIONS</h3>
-                    <p data-i18n="work_real_estate_desc">Revolutionizing property management and client engagement with AI-powered solutions.</p>
+                    <p data-i18n="work_real_estate_desc">Revolutionizing property management and client engagement with
+                        AI-powered solutions.</p>
                 </div>
                 <div class="card animated-element" data-animation="slideInRight">
-                    <img src="./assets/education.png" alt="Education App" class="animated-element" data-animation="scaleIn">
+                    <img src="./assets/education.png" alt="Education App" class="animated-element"
+                        data-animation="scaleIn">
                     <h3 data-i18n="work_education_title">EDUCATION PLATFORMS</h3>
-                    <p data-i18n="work_education_desc">Enhancing learning experiences through personalized educational apps and intelligent tutoring systems.</p>
+                    <p data-i18n="work_education_desc">Enhancing learning experiences through personalized educational
+                        apps and intelligent tutoring systems.</p>
                 </div>
                 <div class="card animated-element" data-animation="slideInLeft">
                     <img src="./assets/fitness.png" alt="Fitness App" class="animated-element" data-animation="scaleIn">
                     <h3 data-i18n="work_fitness_title">FITNESS & WELLNESS</h3>
-                    <p data-i18n="work_fitness_desc">Developing smart fitness trackers and personalized workout plans driven by machine learning.</p>
+                    <p data-i18n="work_fitness_desc">Developing smart fitness trackers and personalized workout plans
+                        driven by machine learning.</p>
                 </div>
                 <div class="card animated-element" data-animation="slideInRight">
-                    <img src="./assets/healthcare.png" alt="Healthcare App" class="animated-element" data-animation="scaleIn">
+                    <img src="./assets/healthcare.png" alt="Healthcare App" class="animated-element"
+                        data-animation="scaleIn">
                     <h3 data-i18n="work_healthcare_title">HEALTHCARE INNOVATIONS</h3>
-                    <p data-i18n="work_healthcare_desc">Innovating healthcare with AI diagnostics, patient management, and telehealth platforms.</p>
+                    <p data-i18n="work_healthcare_desc">Innovating healthcare with AI diagnostics, patient management,
+                        and telehealth platforms.</p>
                 </div>
                 <div class="card animated-element" data-animation="slideInLeft">
-                    <img src="./assets/workplace.png" alt="Workplace Solutions" class="animated-element" data-animation="scaleIn">
+                    <img src="./assets/workplace.png" alt="Workplace Solutions" class="animated-element"
+                        data-animation="scaleIn">
                     <h3 data-i18n="work_workplace_title">WORKPLACE OPTIMIZATION</h3>
-                    <p data-i18n="work_workplace_desc">Optimizing business operations and employee productivity with intelligent workplace solutions.</p>
+                    <p data-i18n="work_workplace_desc">Optimizing business operations and employee productivity with
+                        intelligent workplace solutions.</p>
                 </div>
             </div>
         </section>
 
         <section class="section animated-element" id="team" data-animation="slideInRight">
-            <h2 class="section-title animated-element" data-animation="fadeIn" data-i18n="section_team_title">OUR TEAM</h2>
+            <h2 class="section-title animated-element" data-animation="fadeIn" data-i18n="section_team_title">OUR TEAM
+            </h2>
             <div class="grid-container">
                 <div class="card animated-element" data-animation="fadeInUp">
-                    <img src="./assets/profiles/salamprof.jpeg" alt="Alex Doe Avatar" class="avatar animated-element" data-animation="scaleIn">
+                    <img src="./assets/profiles/salamprof.jpeg" alt="Alex Doe Avatar" class="avatar animated-element"
+                        data-animation="scaleIn">
                     <h3 data-i18n="team_salam_name">ALEX DOE</h3>
-                    <p class="skills" data-i18n="team_salam_skills"><strong>Skills:</strong> Lead iOS Developer, Swift, AI Integration</p>
+                    <p class="skills" data-i18n="team_salam_skills"><strong>Skills:</strong> Lead iOS Developer, Swift,
+                        AI Integration</p>
                 </div>
                 <div class="card animated-element" data-animation="fadeInUp">
-                    <img src="./assets/profiles/haydarprof.jpeg" alt="Jane Smith Avatar" class="avatar animated-element" data-animation="scaleIn">
+                    <img src="./assets/profiles/haydarprof.jpeg" alt="Jane Smith Avatar" class="avatar animated-element"
+                        data-animation="scaleIn">
                     <h3 data-i18n="team_hayder_name">JANE SMITH</h3>
-                    <p class="skills" data-i18n="team_hayder_skills"><strong>Skills:</strong> Senior Android Developer, Kotlin, Machine Learning</p>
+                    <p class="skills" data-i18n="team_hayder_skills"><strong>Skills:</strong> Senior Android Developer,
+                        Kotlin, Machine Learning</p>
                 </div>
                 <div class="card animated-element" data-animation="fadeInUp">
-                    <img src="./assets/profiles/mohammdprof.jpeg" alt="Sam Wilson Avatar" class="avatar animated-element" data-animation="scaleIn">
+                    <img src="./assets/profiles/mohammdprof.jpeg" alt="Sam Wilson Avatar"
+                        class="avatar animated-element" data-animation="scaleIn">
                     <h3 data-i18n="team_moh_name">SAM WILSON</h3>
-                    <p class="skills" data-i18n="team_moh_skills"><strong>Skills:</strong> UI/UX Designer, Flutter, Generative AI Interfaces</p>
+                    <p class="skills" data-i18n="team_moh_skills"><strong>Skills:</strong> UI/UX Designer, Flutter,
+                        Generative AI Interfaces</p>
                 </div>
             </div>
         </section>
@@ -485,4 +564,5 @@
     </script>
 
 </body>
+
 </html>
